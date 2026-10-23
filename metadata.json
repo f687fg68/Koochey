@@ -1,0 +1,6 @@
+{
+  "name": "koochey — Consumer Returns & Refunds Desktop Assistant",
+  "description": "Koochey is a consumer-facing desktop AI assistant that helps you organize receipts, track return deadlines, prepare evidence, and draft retailer follow-ups with human-in-the-loop control.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

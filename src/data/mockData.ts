@@ -1,4 +1,4 @@
-import { ReturnCase, FocusedHelper, FeatureItem, DownloadBinary } from '../types/index.ts';
+import { ReturnCase, FocusedHelper, FeatureItem, PlatformRelease } from '../types/index.ts';
 
 export const CORE_FEATURES: FeatureItem[] = [
   {
@@ -173,38 +173,82 @@ export const SAMPLE_CASES: ReturnCase[] = [
   },
 ];
 
-export const DOWNLOAD_BINARIES: DownloadBinary[] = [
+export const GITHUB_RELEASE_URL = 'https://github.com/f687fg68/Koochey/releases/tag/v1.0.0';
+
+export const PLATFORM_RELEASES: PlatformRelease[] = [
   {
     platform: 'macOS',
-    arch: 'Apple Silicon (M1/M2/M3/M4) & Intel Universal',
-    filename: 'Koochey-1.4.0-universal.dmg',
-    size: '86.4 MB',
-    type: 'DMG Disk Image',
-    badge: 'macOS 12+',
-    extension: '.dmg',
-    checksum: 'sha256: d8f1a238e5bc0914a1c0d4812f8623b1897e9d77e48119c82b0f4',
-    downloadUrl: '#download-dmg',
+    arch: 'Apple Silicon arm64',
+    version: '1.0.0',
+    badge: 'macOS Apple Silicon arm64',
+    description: 'macOS binaries compiled for Apple Silicon (arm64 architecture).',
+    artifacts: [
+      {
+        filename: 'Koochey-1.0.0-arm64.dmg',
+        size: '142.8 MB',
+        checksum: '6d6f7e19628be47ab22465d57a79c8fae5cd518f4443119070a7bc7fb34ecf37',
+        format: 'DMG Disk Image',
+        downloadUrl: 'https://github.com/f687fg68/Koochey/releases/download/v1.0.0/Koochey-1.0.0-arm64.dmg',
+        label: 'Download .dmg',
+      },
+      {
+        filename: 'Koochey-darwin-arm64-1.0.0.zip',
+        size: '142.9 MB',
+        checksum: '20d7abefc7f91dd46b4f4cd9c70fe263012c0852818d1c0eedda434c1a96d5f5',
+        format: 'ZIP Archive',
+        downloadUrl: 'https://github.com/f687fg68/Koochey/releases/download/v1.0.0/Koochey-darwin-arm64-1.0.0.zip',
+        label: 'Download .zip',
+      },
+    ],
   },
   {
     platform: 'Windows',
-    arch: 'x64 (Windows 10 / 11)',
-    filename: 'Koochey-Setup-1.4.0.exe',
-    size: '79.2 MB',
-    type: 'Installer & Portable EXE',
-    badge: 'Win 10/11 64-bit',
-    extension: '.exe',
-    checksum: 'sha256: c3b79f18a24558ef930211a7f012e848695021dbab8942365cf',
-    downloadUrl: '#download-exe',
+    arch: 'Windows x64',
+    version: '1.0.0',
+    badge: 'Windows x64',
+    description: 'Portable executable for 64-bit Windows (x64 architecture). Requires no installer setup.',
+    artifacts: [
+      {
+        filename: 'Koochey-1.0.0-Portable.exe',
+        size: '409.1 MB',
+        checksum: '8b3071a02a1a09b1650bf34535925a6874367e415fbc0a39fef62b20e9a54f31',
+        format: 'Portable Executable',
+        downloadUrl: 'https://github.com/f687fg68/Koochey/releases/download/v1.0.0/Koochey-1.0.0-Portable.exe',
+        label: 'Download Portable .exe',
+      },
+    ],
   },
   {
     platform: 'Linux',
-    arch: 'x86_64 / arm64',
-    filename: 'Koochey-1.4.0.AppImage',
-    size: '91.8 MB',
-    type: 'Universal AppImage & DEB',
-    badge: 'Ubuntu / Fedora / Arch',
-    extension: '.AppImage',
-    checksum: 'sha256: a4e99f0102bc45398201a4e12e99df8932bc6702e88102b8d90',
-    downloadUrl: '#download-linux',
+    arch: 'Linux x86_64',
+    version: '1.0.0',
+    badge: 'Linux x86_64',
+    description: 'Standalone and package manager formats for 64-bit Linux (x86_64 architecture).',
+    artifacts: [
+      {
+        filename: 'Koochey-1.0.0-x86_64.AppImage',
+        size: '140.9 MB',
+        checksum: 'fd02680f80e3742f978dd48cfa31b756b5ab9c74abbd39867efd5c0119580c76',
+        format: 'AppImage Standalone',
+        downloadUrl: 'https://github.com/f687fg68/Koochey/releases/download/v1.0.0/Koochey-1.0.0-x86_64.AppImage',
+        label: 'Download .AppImage',
+      },
+      {
+        filename: 'koochey_1.0.0_amd64.deb',
+        size: '106.4 MB',
+        checksum: '79bac42868a31b97a9272d2262883657ee997866a64e662c3f851fe983091ada',
+        format: 'Debian / Ubuntu Package',
+        downloadUrl: 'https://github.com/f687fg68/Koochey/releases/download/v1.0.0/koochey_1.0.0_amd64.deb',
+        label: 'Download .deb',
+      },
+      {
+        filename: 'koochey-1.0.0-1.x86_64.rpm',
+        size: '115.6 MB',
+        checksum: '84e49801b6ee9b9571ac71112bfa0e10d24ddcd6b8967e1029c6d0efdf5af641',
+        format: 'Fedora / RHEL Package',
+        downloadUrl: 'https://github.com/f687fg68/Koochey/releases/download/v1.0.0/koochey-1.0.0-1.x86_64.rpm',
+        label: 'Download .rpm',
+      },
+    ],
   },
 ];

@@ -69,7 +69,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   className="px-5 py-3 bg-stone-900 text-stone-50 text-xs uppercase tracking-widest font-medium rounded-lg hover:bg-stone-800 transition-all shadow-sm flex items-center gap-2"
                 >
                   <Download className="w-3.5 h-3.5 text-stone-100" />
-                  <span>Download for Desktop</span>
+                  <span>View Release Artifacts</span>
                 </button>
 
                 <button
@@ -81,40 +81,38 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 </button>
               </div>
 
-              {/* Direct Desktop Download Binaries */}
+              {/* Release Binaries (Koochey 1.0.0) */}
               <div className="pt-2">
                 <p className="text-[11px] uppercase tracking-wider text-stone-500 font-semibold mb-2">
-                  Direct Binaries for Local Installation:
+                  Direct Binaries (Koochey 1.0.0):
                 </p>
                 <div className="flex flex-wrap items-center gap-2 text-xs">
-                  <a
-                    href="#download-dmg"
-                    onClick={(e) => { e.preventDefault(); onGoToDownloads(); }}
+                  <button
+                    onClick={onGoToDownloads}
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-stone-100 hover:bg-stone-200 border border-stone-200/90 rounded-md text-stone-800 transition-colors"
                   >
                     <Apple className="w-3.5 h-3.5 text-stone-700" />
-                    <span className="font-medium">macOS .dmg</span>
-                    <span className="text-[10px] text-stone-500">(Universal)</span>
-                  </a>
+                    <span className="font-medium">macOS</span>
+                    <span className="text-[10px] text-stone-500 font-mono">Apple Silicon arm64</span>
+                  </button>
 
-                  <a
-                    href="#download-exe"
-                    onClick={(e) => { e.preventDefault(); onGoToDownloads(); }}
+                  <button
+                    onClick={onGoToDownloads}
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-stone-100 hover:bg-stone-200 border border-stone-200/90 rounded-md text-stone-800 transition-colors"
                   >
                     <Monitor className="w-3.5 h-3.5 text-stone-700" />
-                    <span className="font-medium">Windows .exe</span>
-                    <span className="text-[10px] text-stone-500">(64-bit)</span>
-                  </a>
+                    <span className="font-medium">Windows</span>
+                    <span className="text-[10px] text-stone-500 font-mono">x64 (Portable)</span>
+                  </button>
 
-                  <a
-                    href="#download-linux"
-                    onClick={(e) => { e.preventDefault(); onGoToDownloads(); }}
+                  <button
+                    onClick={onGoToDownloads}
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-stone-100 hover:bg-stone-200 border border-stone-200/90 rounded-md text-stone-800 transition-colors"
                   >
                     <Layers className="w-3.5 h-3.5 text-stone-700" />
-                    <span className="font-medium">Linux .AppImage / .deb</span>
-                  </a>
+                    <span className="font-medium">Linux</span>
+                    <span className="text-[10px] text-stone-500 font-mono">x86_64</span>
+                  </button>
                 </div>
               </div>
 

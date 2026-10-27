@@ -36,14 +36,20 @@ export interface FeatureItem {
   tags: string[];
 }
 
-export interface DownloadBinary {
-  platform: 'macOS' | 'Windows' | 'Linux';
-  arch: string;
+export interface ReleaseArtifact {
   filename: string;
   size: string;
-  type: string;
-  badge: string;
-  extension: '.dmg' | '.exe' | '.AppImage' | '.deb';
   checksum: string;
+  format: string;
   downloadUrl: string;
+  label?: string;
+}
+
+export interface PlatformRelease {
+  platform: 'macOS' | 'Windows' | 'Linux';
+  arch: string;
+  version: string;
+  badge: string;
+  description: string;
+  artifacts: ReleaseArtifact[];
 }

@@ -26,7 +26,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               onClick={() => onNavigate('downloads')}
               className="px-5 py-2.5 bg-stone-900 text-stone-50 text-xs uppercase tracking-widest font-medium rounded-lg hover:bg-stone-800 transition-colors shadow-2xs"
             >
-              Get Binaries (.dmg / .exe)
+              View Release Artifacts
             </button>
           </div>
         </div>
@@ -34,24 +34,24 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         {/* Links Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-xs text-stone-600">
           <div className="space-y-3">
-            <p className="font-semibold uppercase tracking-wider text-stone-900 text-[11px]">Desktop Binaries</p>
+            <p className="font-semibold uppercase tracking-wider text-stone-900 text-[11px]">Platform Releases</p>
             <ul className="space-y-2">
               <li>
-                <button onClick={() => onNavigate('downloads')} className="hover:text-stone-900 flex items-center gap-1.5">
-                  <Apple className="w-3.5 h-3.5" />
-                  <span>macOS Apple Silicon & Intel (.dmg)</span>
+                <button onClick={() => onNavigate('downloads')} className="hover:text-stone-900 flex items-center gap-1.5 text-left">
+                  <Apple className="w-3.5 h-3.5 text-stone-700" />
+                  <span>macOS Apple Silicon arm64</span>
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('downloads')} className="hover:text-stone-900 flex items-center gap-1.5">
-                  <Monitor className="w-3.5 h-3.5" />
-                  <span>Windows 10 / 11 64-bit (.exe)</span>
+                <button onClick={() => onNavigate('downloads')} className="hover:text-stone-900 flex items-center gap-1.5 text-left">
+                  <Monitor className="w-3.5 h-3.5 text-stone-700" />
+                  <span>Windows x64 (Portable)</span>
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate('downloads')} className="hover:text-stone-900 flex items-center gap-1.5">
-                  <Layers className="w-3.5 h-3.5" />
-                  <span>Linux AppImage & DEB</span>
+                <button onClick={() => onNavigate('downloads')} className="hover:text-stone-900 flex items-center gap-1.5 text-left">
+                  <Layers className="w-3.5 h-3.5 text-stone-700" />
+                  <span>Linux x86_64 (.AppImage, .deb, .rpm)</span>
                 </button>
               </li>
             </ul>
@@ -104,9 +104,16 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         <div className="flex flex-col sm:flex-row items-center justify-between text-[11px] text-stone-500 border-t border-stone-200 pt-6 gap-2">
           <span>© {new Date().getFullYear()} Koochey Desktop. All rights reserved.</span>
           <div className="flex items-center gap-4">
-            <span>Built for local installation</span>
+            <a
+              href="https://github.com/f687fg68/Koochey/releases/tag/v1.0.0"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-stone-800 transition-colors"
+            >
+              GitHub Releases
+            </a>
             <span>·</span>
-            <span>v1.4.0 (Universal)</span>
+            <span>Koochey 1.0.0</span>
           </div>
         </div>
 

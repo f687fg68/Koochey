@@ -53,15 +53,15 @@ export const Header: React.FC<HeaderProps> = ({
                 : 'hover:text-stone-900 text-stone-500'
             }`}
           >
-            <span className="hidden sm:inline">Downloads (.dmg / .exe)</span>
-            <span className="sm:hidden">Binaries</span>
+            <span className="hidden sm:inline">Downloads & Releases</span>
+            <span className="sm:hidden">Releases</span>
             {activeTab === 'downloads' && (
               <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-stone-900 rounded-full" />
             )}
           </button>
         </nav>
 
-        {/* Right: Direct Download CTA */}
+        {/* Right: Releases Navigation CTA */}
         <div className="flex items-center gap-3">
           <button
             onClick={() => {
@@ -71,7 +71,7 @@ export const Header: React.FC<HeaderProps> = ({
             className="flex items-center gap-1.5 px-3.5 py-1.5 bg-stone-900 hover:bg-stone-800 text-stone-50 text-xs font-medium rounded-lg transition-colors shadow-2xs"
           >
             <Download className="w-3.5 h-3.5" />
-            <span>Download</span>
+            <span>Releases</span>
           </button>
         </div>
 

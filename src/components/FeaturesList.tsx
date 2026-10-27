@@ -166,7 +166,7 @@ export const FeaturesList: React.FC<FeaturesListProps> = ({
                 }}
                 className="px-5 py-2.5 bg-stone-900 text-stone-50 text-xs uppercase tracking-wider font-medium rounded-lg hover:bg-stone-800 transition-colors"
               >
-                Download Desktop Binary
+                View Release Artifacts
               </button>
             </div>
           </div>

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import {
   Apple,
   Monitor,
-  Layers,
   Check,
   Copy,
   Download,
@@ -25,7 +24,6 @@ export const DownloadsSection: React.FC = () => {
 
   const macRelease = PLATFORM_RELEASES.find((r) => r.platform === 'macOS');
   const winRelease = PLATFORM_RELEASES.find((r) => r.platform === 'Windows');
-  const linuxRelease = PLATFORM_RELEASES.find((r) => r.platform === 'Linux');
 
   return (
     <section id="downloads" className="py-20 md:py-28 border-b border-stone-200/80 bg-[#FAF9F5]">
@@ -52,7 +50,7 @@ export const DownloadsSection: React.FC = () => {
               <span>Koochey 1.0.0 Release Artifacts</span>
             </div>
             <p className="text-stone-600">
-              Direct binaries for macOS (Apple Silicon arm64), Windows (x64), and Linux (x86_64). Verify cryptographic SHA-256 hashes before running.
+              Direct binaries for macOS (Apple Silicon arm64) and Windows (x64). Verify cryptographic SHA-256 hashes before running.
             </p>
           </div>
           <a
@@ -66,8 +64,8 @@ export const DownloadsSection: React.FC = () => {
           </a>
         </div>
 
-        {/* 3 Platform Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 items-start">
+        {/* Platform Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 items-start">
           
           {/* macOS Apple Silicon arm64 */}
           <div className="bg-white border border-stone-200/90 rounded-2xl p-6 sm:p-8 space-y-6 flex flex-col justify-between shadow-xs">
@@ -163,7 +161,7 @@ export const DownloadsSection: React.FC = () => {
 
               <div>
                 <span className="text-[10px] font-mono uppercase tracking-wider text-stone-400 block">
-                  Version {winRelease?.version} · Portable Executable
+                  Version {winRelease?.version} · Setup Installer
                 </span>
                 <h3 className="font-editorial-serif text-2xl font-medium text-stone-900 mt-1">
                   Windows
@@ -192,88 +190,8 @@ export const DownloadsSection: React.FC = () => {
                     </div>
 
                     <p className="text-[10px] text-stone-500 font-medium">
-                      Portable executable (no setup or installer required)
+                      Windows installer executable (Setup)
                     </p>
-
-                    <div className="flex items-center justify-between gap-2 text-[10px] text-stone-500">
-                      <span className="font-mono truncate" title={artifact.checksum}>
-                        SHA-256: {artifact.checksum.slice(0, 14)}...{artifact.checksum.slice(-6)}
-                      </span>
-                      <button
-                        onClick={() => handleCopyHash(artifact.checksum)}
-                        className="text-stone-600 hover:text-stone-900 flex items-center gap-1 font-mono shrink-0 transition-colors"
-                        title="Copy full SHA-256 checksum"
-                      >
-                        {copiedHash === artifact.checksum ? (
-                          <>
-                            <Check className="w-3 h-3 text-emerald-600" />
-                            <span className="text-emerald-700">Copied</span>
-                          </>
-                        ) : (
-                          <>
-                            <Copy className="w-3 h-3" />
-                            <span>Copy SHA</span>
-                          </>
-                        )}
-                      </button>
-                    </div>
-
-                    <a
-                      href={artifact.downloadUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full py-2.5 bg-stone-900 hover:bg-stone-800 text-stone-50 text-xs font-medium rounded-lg transition-colors flex items-center justify-center gap-2 shadow-2xs mt-1"
-                    >
-                      <Download className="w-3.5 h-3.5" />
-                      <span>{artifact.label}</span>
-                    </a>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Linux x86_64 */}
-          <div className="bg-white border border-stone-200/90 rounded-2xl p-6 sm:p-8 space-y-6 flex flex-col justify-between shadow-xs">
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <div className="w-12 h-12 rounded-xl bg-stone-100 flex items-center justify-center text-stone-900">
-                  <Layers className="w-6 h-6" />
-                </div>
-                <span className="text-[10px] uppercase font-mono font-medium tracking-wider px-2.5 py-1 bg-stone-100 text-stone-700 rounded-md border border-stone-200">
-                  {linuxRelease?.badge}
-                </span>
-              </div>
-
-              <div>
-                <span className="text-[10px] font-mono uppercase tracking-wider text-stone-400 block">
-                  Version {linuxRelease?.version} · x86_64
-                </span>
-                <h3 className="font-editorial-serif text-2xl font-medium text-stone-900 mt-1">
-                  Linux
-                </h3>
-                <p className="text-xs text-stone-600 mt-1 leading-relaxed">
-                  {linuxRelease?.description}
-                </p>
-              </div>
-
-              {/* Artifacts with Individual Download Actions */}
-              <div className="space-y-3 pt-3 border-t border-stone-100 text-xs text-stone-600">
-                <div className="font-medium text-[11px] uppercase tracking-wider text-stone-700 flex items-center gap-1.5">
-                  <FileArchive className="w-3.5 h-3.5 text-stone-500" />
-                  <span>Release Artifacts:</span>
-                </div>
-
-                {linuxRelease?.artifacts?.map((artifact) => (
-                  <div key={artifact.filename} className="p-3 bg-stone-50 rounded-xl border border-stone-200/80 space-y-2">
-                    <div className="flex items-start justify-between gap-2">
-                      <span className="font-mono text-[11px] font-semibold text-stone-900 break-all">
-                        {artifact.filename}
-                      </span>
-                      <span className="text-stone-500 font-mono text-[11px] whitespace-nowrap shrink-0">
-                        {artifact.size}
-                      </span>
-                    </div>
 
                     <div className="flex items-center justify-between gap-2 text-[10px] text-stone-500">
                       <span className="font-mono truncate" title={artifact.checksum}>

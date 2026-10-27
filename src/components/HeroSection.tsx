@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowDown, Download, ShieldCheck, Apple, Monitor, Layers } from 'lucide-react';
+import { ArrowDown, Download, ShieldCheck, Apple, Monitor } from 'lucide-react';
 
 interface HeroSectionProps {
   onExploreFeatures: () => void;
@@ -102,16 +102,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   >
                     <Monitor className="w-3.5 h-3.5 text-stone-700" />
                     <span className="font-medium">Windows</span>
-                    <span className="text-[10px] text-stone-500 font-mono">x64 (Portable)</span>
-                  </button>
-
-                  <button
-                    onClick={onGoToDownloads}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-stone-100 hover:bg-stone-200 border border-stone-200/90 rounded-md text-stone-800 transition-colors"
-                  >
-                    <Layers className="w-3.5 h-3.5 text-stone-700" />
-                    <span className="font-medium">Linux</span>
-                    <span className="text-[10px] text-stone-500 font-mono">x86_64</span>
+                    <span className="text-[10px] text-stone-500 font-mono">x64 (Setup .exe)</span>
                   </button>
                 </div>
               </div>

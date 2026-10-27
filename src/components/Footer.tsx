@@ -1,5 +1,5 @@
 import React from 'react';
-import { Apple, Monitor, Layers, ShieldCheck, Heart } from 'lucide-react';
+import { Apple, Monitor, ShieldCheck, Heart } from 'lucide-react';
 
 interface FooterProps {
   onNavigate: (tab: 'features' | 'downloads') => void;
@@ -45,13 +45,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               <li>
                 <button onClick={() => onNavigate('downloads')} className="hover:text-stone-900 flex items-center gap-1.5 text-left">
                   <Monitor className="w-3.5 h-3.5 text-stone-700" />
-                  <span>Windows x64 (Portable)</span>
-                </button>
-              </li>
-              <li>
-                <button onClick={() => onNavigate('downloads')} className="hover:text-stone-900 flex items-center gap-1.5 text-left">
-                  <Layers className="w-3.5 h-3.5 text-stone-700" />
-                  <span>Linux x86_64 (.AppImage, .deb, .rpm)</span>
+                  <span>Windows x64 (Setup .exe)</span>
                 </button>
               </li>
             </ul>

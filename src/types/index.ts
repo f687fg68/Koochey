@@ -46,7 +46,7 @@ export interface ReleaseArtifact {
 }
 
 export interface PlatformRelease {
-  platform: 'macOS' | 'Windows' | 'Linux';
+  platform: 'macOS' | 'Windows';
   arch: string;
   version: string;
   badge: string;
